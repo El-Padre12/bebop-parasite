@@ -3,7 +3,7 @@ import serial_util
 import time
 
 class SongManager():
-    songAmount = 3
+    songAmount = 4
     currentSong = 0
 
     def songLeft(self):
