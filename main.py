@@ -6,6 +6,15 @@ from pyPS4Controller.controller import Controller
 
 
 class MyController(Controller):
+
+    # Brushes
+    #   def on_R3_right(self, value):
+    #        serial_util.send_as_bytes(b'\x8a\x01')
+
+    # Motor
+    #   def on_R3_down(self, value):
+    #        serial_util.send_as_bytes(b'\x8a\x02')
+
     playlist = songs.SongManager()
 
     alog_up = 0
@@ -22,13 +31,8 @@ class MyController(Controller):
     def on_R1_press(self):
         self.playlist.songRight()
 
-    # Brushes
-    #   def on_R3_right(self, value):
-    #        serial_util.send_as_bytes(b'\x8a\x01')
-
-    # Motor
-    #   def on_R3_down(self, value):
-    #        serial_util.send_as_bytes(b'\x8a\x02')
+    def on_share_press(self):
+        self.playlist.play_current_song()
 
     def on_circle_press(self):  # up
         serial_util.send_as_bytes(b'\x89\xFE\x0C\x00\x00')
@@ -41,9 +45,6 @@ class MyController(Controller):
 
     def on_x_press(self):  # right
         serial_util.send_as_bytes(b'\x89\x27\x10\x00\x01')
-
-    def on_share_press(self):
-        self.playlist.play_current_song()
 
     def on_circle_release(self):
         serial_util.send_as_bytes(b'\x89\x00\x00\x00\x00')
@@ -60,8 +61,8 @@ class MyController(Controller):
     def on_options_press(self):
         serial_util.send_as_bytes(b'\x85')
 
+    # reset sequence that works half the time
     def on_options_release(self):
-        # reset sequence that works half the time
         # passive
         serial_util.send_as_bytes(b'\x80')
         # safe mode
@@ -119,7 +120,6 @@ class MyController(Controller):
 # L analog - translate coords to 8 bit vals (pos and neg) (omnidirectional)
 # -32000 - 32000
 
-# Start - Programmatically play roomba notes
 
 def main():
 
@@ -133,7 +133,8 @@ def main():
     serial_util.send_as_bytes(b'\x84')
 
     # serial_util.send_as_bytes(b'\x8c\x00')
-    controller = MyController(interface="/dev/input/js0",connecting_using_ds4drv=False)
+    controller = MyController(interface="/dev/input/js0",
+                              connecting_using_ds4drv=False)
     controller.listen(400)
 
 
