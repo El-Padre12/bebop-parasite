@@ -113,6 +113,29 @@ class MyController(Controller):
 def send_as_bytes(bytes, port):
     port.write(bytes)
 
+def play_la_cucaracha(port):
+    """
+    Program and play La Cucaracha on the Roomba
+    Song command: 0x8C [Song Number] [Song Length] [Note1] [Duration1] ...
+    Play command: 0x8D [Song Number]
+    
+    Note values: MIDI note numbers (60 = Middle C)
+    Duration: in 1/64ths of a second
+    """
+    print("Playing La Cucaracha!")
+    
+    # La Cucaracha melody (simplified version)
+    # Format: 0x8C [Song#] [Length] [Note1] [Duration1] [Note2] [Duration2]...
+    song = b'\x8C\x00\x10' \
+           b'\x3C\x10\x3C\x10\x3C\x10\x41\x20\x45\x20' \
+           b'\x3C\x10\x3C\x10\x3C\x10\x41\x20\x45\x20' \
+           b'\x48\x18\x46\x08\x45\x18\x43\x08\x41\x20\x3C\x20'
+    
+    # Send the song programming command
+    send_as_bytes(song, port)
+    
+    # Play the song
+    send_as_bytes(b'\x8D\x00', port) 
 
 def main():
     # passive
