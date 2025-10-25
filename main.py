@@ -115,7 +115,6 @@ def send_as_bytes(bytes, port):
 
 
 def main():
-    print("Hello world")
     # passive
     send_as_bytes(b'\x80', ser)
     # safe mode
@@ -123,13 +122,12 @@ def main():
     # full control
     send_as_bytes(b'\x84', ser)
 
-    send_as_bytes(b'\x8c\x00\x0A\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10', ser)
-
+    # send_as_bytes(b'\x8c\x00\x0A\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10\x4c\10', ser)
     # send_as_bytes(b'\x8C\x00\x0C\x3C\x10\x3C\x10\x3C\x10\x3E\x08\x40\x08\x41\x10\x40\x08\x3E\x08\x40\x10\x3C\x10\x40\x10\x43\x20', ser)
-    # send_as_bytes(b'\x8C\x01\x0F\x48\x10\x1E\x08\x48\x10\x47\x10\x45\x10\x1E\x08\x43\x10\x45\x10\x47\x10\x1E\x08\x48\x20\x43\x10\x1E\x08\x40\x10\x3C\x20', ser)
+    send_as_bytes(b'\x8C\x00\x03\x4C\x0A\x4C\x0A\x50\x20', ser)
 
+    # send_as_bytes(b'\x8d\x00', ser)
     send_as_bytes(b'\x8d\x00', ser)
-    # send_as_bytes(b'\x8d\x01', ser)
     # send_as_bytes(b'\x8c\x00', ser)
 
     controller = MyController(interface="/dev/input/js0",
