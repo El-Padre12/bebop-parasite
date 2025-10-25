@@ -2,9 +2,8 @@ import enum
 import serial_util
 import time
 
-
 class SongManager():
-    songAmount = 1
+    songAmount = 3
     currentSong = 0
 
     def songLeft(self):
@@ -19,8 +18,11 @@ class SongManager():
         if (self.currentSong == 0):
             # play a single note and sleep 0.1
             self.la_cucaracha()
+        elif (self.currentSong == 1):
+            self.mario_death()
 
     # 0
+
     def la_cucaracha(self):
 
         # First song section
@@ -38,13 +40,17 @@ class SongManager():
         # Call second song
         serial_util.send_as_bytes(b'\x8d\x01')
 
-    def mario_death(self):
-        serial_util.send_as_bytes
-        (b'\x8c\x00\x84\x84\x84\x24\x84\x1f')
-
-        serial_util.send_as_bytes(b'\x8d\x01')
+    # 1
 
     #Cats on Mars Attempt
     def cats_on_mars(self): #                    E       G       D110    B107    G       E
         serial_util.send_as_bytes(b'\x8C\x00\x0F\x64\x10\x67\x10\x6e\x12\x6b\x10\x67\x10\x64\x12')
         serial_util.send_as_bytes(b'\x8d\x01')
+
+    def mario_death(self):
+        serial_util.send_as_bytes(b'\x8c\x00\x03\x3c\x3c\x84\x40\x3c\x40')
+        serial_util.send_as_bytes(b'\x8d\x00')
+    
+    def tank(self):
+        serial_util.send_as_bytes(b'\x8c\x00\x03\x73\x08\x73\x08\x73\x08')
+        serial_util.send_as_bytes(b'\x8d\x00')
