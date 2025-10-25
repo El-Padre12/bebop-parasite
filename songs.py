@@ -55,7 +55,7 @@ class SongManager():
         serial_util.send_as_bytes(b'\x8c\x00\x01\x64\x10')
         serial_util.send_as_bytes(b'\x8d\x00')
 
-        serial_util.send_as_bytes(b'\x8C\x00\x06\x64\x10\x67\x10\x6e\x12\x6b\x10\x67\x10\x64\x12')
+        serial_util.send_as_bytes(b'\x8C\x00\x06\x70\x67\x6e\x6b\x67\x70')
         serial_util.send_as_bytes(b'\x8d\x01')
 
     # 2
