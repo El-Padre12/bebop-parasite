@@ -1,4 +1,6 @@
 import enum
+
+import serial
 import serial_util
 import time
 
@@ -31,5 +33,12 @@ class SongManager():
 
         time.sleep(4.48)
         print("FuckOff")
+
+        serial_util.send_as_bytes(b'\x8d\x01')
+
+    def mario_death(self):
+
+        serial_util.send_as_bytes
+        (b'\x8c\x00\x84\x84\x84\x24\x84\x1f')
 
         serial_util.send_as_bytes(b'\x8d\x01')
