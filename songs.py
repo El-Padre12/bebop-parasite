@@ -39,6 +39,6 @@ class SongManager():
     def mario_death(self):
 
         serial_util.send_as_bytes
-        (b'\x8c\x00\x84\x84\x84\x24\x84\x1f')
+        (b'\x8c\x00\x06\x84\x20\x84\x20\x84\x20\x24\20\x84\x20\2b\x20')
 
-        serial_util.send_as_bytes(b'\x8d\x01')
+        serial_util.send_as_bytes(b'\x8d\x00\x10')
