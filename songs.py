@@ -42,3 +42,7 @@ class SongManager():
         (b'\x8c\x00\x84\x84\x84\x24\x84\x1f')
 
         serial_util.send_as_bytes(b'\x8d\x01')
+
+    #Cats on Mars Attempt
+    def cats_on_mars(self): #                    E       G       D110    B107    G       E
+        serial_util.send_as_bytes(b'\x8C\x00\x0F\x64\x10\x67\x10\x6e\x10\x6b\x10\x67\x10\x64\x10')
