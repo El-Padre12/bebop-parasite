@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# USAGE : ./notesToBstr.py <octave> <notelength (x/64 of a second)> Note1,Note2,Note3...
+
+
 import sys
 
 octave = int(sys.argv[1])
