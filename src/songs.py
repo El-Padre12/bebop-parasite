@@ -71,10 +71,9 @@ class SongManager():
     # 2
     def mario(self):
         # 1st song
-        serial_util.send_as_bytes(b'\x8c\x00\x02\x77\x18\x7c\x18')
+        serial_util.send_as_bytes(b'\x8c\x00\x02\x47\x18\x4c\x18')
 
         # call 1st song
-        serial_util.send_as_bytes(b'\x8d\x00')
         serial_util.send_as_bytes(b'\x8d\x00')
 
         print("Playing Mario Coin Sound!")
