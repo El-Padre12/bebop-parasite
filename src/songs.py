@@ -53,10 +53,16 @@ class SongManager():
     def cats_on_mars(self): #                    E       G       D110    B107    G       E
         #serial_util.send_as_bytes(b'\x8c\x00\x01\x64\x10')
         #serial_util.send_as_bytes(b'\x8d\x00')   E       G       D       B       G       E       E 
-        serial_util.send_as_bytes(b'\x8C\x00\x0C\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A')
-    #     G        B      G       D        B
+        serial_util.send_as_bytes(b'\x8C\x00\x0e\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A\x47\x10\x4a\x10\x4d\x1A')
+    # G        B      G       D        B      B      D
+        serial_util.send_as_bytes(b'\x8C\x01\x07\x4a\x10\x47\x10\x37\x1A\x4a\x1A\x40\x10\x41\x10\x37\x10') # song sec 2
+        #                                         D     B        G       D
+            
+    # Play song sec 1
         serial_util.send_as_bytes(b'\x8d\x00')
-
+        time.sleep(4.48)
+        serial_util.send_as_bytes(b'\x8d\x01')
+        
     # 2
     def mario(self):
         # 1st section
