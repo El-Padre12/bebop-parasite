@@ -79,8 +79,12 @@ class SongManager():
         # second call
         serial_util.send_as_bytes(b'\x8d\x01')
 
+        time.sleep(4.48)
+
         #3rd call
         serial_util.send_as_bytes(b'\x8d\x02')
+
+        time.sleep(4.48)
 
         #4th call
         serial_util.send_as_bytes(b'\x8d\x03')
