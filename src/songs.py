@@ -28,6 +28,8 @@ class SongManager():
             self.mario()
         elif (self.currentSong == 3):
             self.tank()
+        elif (self.currentSong == 4):
+            self.mary_had_a_little_lamb()
 
     # 0
 
@@ -69,14 +71,22 @@ class SongManager():
         serial_util.send_as_bytes(b'\x8c\x00\x02\x77\x18\x7c\x18')
 
         # call 1st song
-        serial_util.send_as_bytes(b'\x8c\x00')
+        serial_util.send_as_bytes(b'\x8d\x00')
 
         print("Playing Mario Coin Sound!")
-
-
 
     # 3
     def tank(self):
         serial_util.send_as_bytes(b'\x8c\x00\x0E\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x44\x08\x47\x08')
         serial_util.send_as_bytes(b'\x8d\x00')
         print("Playing tank!")
+
+    # 4
+    def mary_had_a_little_lamb(self):
+        #1st song
+        serial_util.send_as_bytes(b'\x8c\x00\x0d\x4c\x18\x4a\x18\x48\x18\x4a\x18\x4c\x18\x4c\x18\x4c\x18\x4a\x18\x4a\x18\x4a\x18\x4c\x18\x43\x18\x43\x18')
+
+        #call to 1st song
+        serial_util.send_as_bytes(b'\x8d\x00')
+
+        print("Playing 'Mary had a little lamb'")
