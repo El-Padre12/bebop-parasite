@@ -1,10 +1,9 @@
 import serial_util
 import time
 
-
 class SongManager():
 
-    songAmount = 5
+    songAmount = 6
     currentSong = 0
 
     # TODO
@@ -30,9 +29,10 @@ class SongManager():
             self.tank()
         elif (self.currentSong == 4):
             self.mary_had_a_little_lamb()
+        elif (self.currentSong == 5):
+            self.portal_still_alive()
 
     # 0
-
     def la_cucaracha(self):
         # First song section
         serial_util.send_as_bytes(b'\x8C\x00\x0F\x37\x10\x37\x10\x37\x10\x3c\x1A\x40\x1A\x37\x10\x37\x10\x37\x10\x3c\x1A\x40\x1A\x3c\x10\x3c\x10\x3b\x10\x3b\x10\x39\x10\x39\x10\x37\x1A')
@@ -50,7 +50,7 @@ class SongManager():
         serial_util.send_as_bytes(b'\x8d\x01')
 
     # 1
-    # Cats on Mars Attempt
+    # Cats on Mars
     def cats_on_mars(self):
         serial_util.send_as_bytes(b'\x8c\x00\x0f\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A\x47\x10\x4a\x10\x4d\x1A\x4d\x1A')
         serial_util.send_as_bytes(b'\x8c\x01\x07\x4a\x10\x47\x10\x43\x1A\x4a\x1A\x40\x1A\x41\x1A\x43\x1A') # song sec 2
@@ -76,13 +76,13 @@ class SongManager():
         # call 1st song
         serial_util.send_as_bytes(b'\x8d\x00')
 
-        print("Playing Mario Coin Sound!")
-
     # 3
     def tank(self):
-        serial_util.send_as_bytes(b'\x8c\x00\x0E\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x44\x08\x47\x08')
+        serial_util.send_as_bytes(b'\x8c\x00\x0E\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4c\x08\x4c\x08\x82\x04\x4f\x10\x50\x10')
+        # serial_util.send_as_bytes(b'\x8c\x01\x0E\x43\x10\x44\x10\x45\x10\x4c\x1A\x45\x08\x1e\x1A\x45\x08\x48\x10\x45\x10\x43\x10\x45\x10\x45\x10\x4c\x10\x45\x10')
         serial_util.send_as_bytes(b'\x8d\x00')
-        print("Playing tank!")
+        # time.sleep(5)
+        # serial_util.send_as_bytes(b'\x8d\x01')
 
     # 4
     def mary_had_a_little_lamb(self):
@@ -92,4 +92,7 @@ class SongManager():
         #call to 1st song
         serial_util.send_as_bytes(b'\x8d\x00')
 
-        print("Playing 'Mary had a little lamb'")
+    # 5
+    def portal_still_alive(self):
+        serial_util.send_as_bytes(b'\x8c\x00\x0e\x43\x10\x4e\x10\x4c\x10\x4c\x10\x4e\x10\x45\x10\x43\x10\x4e\x10\x4c\x10\x4c\x10\x4c\x10\x4e\x10\x4a\x10\x4c\x10')
+        serial_util.send_as_bytes(b'\x8d\x00')
