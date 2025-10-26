@@ -1,12 +1,12 @@
-import enum
 import serial_util
 import time
+
 
 class SongManager():
 
     songAmount = 4
     currentSong = 0
-    
+
     # TODO
     def initialize(self):
         serial_util.send_as_bytes(b'\x8C\x00\x0F\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
@@ -49,7 +49,7 @@ class SongManager():
 
     # 1
     # Cats on Mars Attempt
-    def cats_on_mars(self): #                    E       G       D110    B107    G       E
+    def cats_on_mars(self):
         serial_util.send_as_bytes(b'\x8c\x00\x0f\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A\x47\x10\x4a\x10\x4d\x1A\x4d\x1A')
         serial_util.send_as_bytes(b'\x8c\x01\x07\x4a\x10\x47\x10\x43\x1A\x4a\x1A\x40\x1A\x41\x1A\x43\x1A') # song sec 2
         serial_util.send_as_bytes(b'\x8c\x02\x0e\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A\x47\x10\x4a\x10')
@@ -75,7 +75,6 @@ class SongManager():
         serial_util.send_as_bytes(b'\x8d\x00')
 
         print("Playing Mario Coin Sound!")
-
 
     # 3
     def tank(self):
