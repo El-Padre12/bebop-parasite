@@ -53,8 +53,7 @@ class SongManager():
     def cats_on_mars(self): #                    E       G       D110    B107    G       E
         #serial_util.send_as_bytes(b'\x8c\x00\x01\x64\x10')
         #serial_util.send_as_bytes(b'\x8d\x00')
-
-        serial_util.send_as_bytes(b'\x8C\x00\x03\x4c\x10\x4f\x10\x56\x10\x47\x10\x43\x10\x4c\x10')
+        serial_util.send_as_bytes(b'\x8C\x00\x06\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x10')
         serial_util.send_as_bytes(b'\x8d\x00')
 
     # 2
