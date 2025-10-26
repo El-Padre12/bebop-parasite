@@ -12,7 +12,7 @@ def main():
     # full control
     serial_util.send_as_bytes(b'\x84')
 
-    serial_util.send_as_bytes(b'\x8c\x00\x01\x4e\x10')
+    serial_util.send_as_bytes(b'\x8c\x00\x01\x4d\x10')
     serial_util.send_as_bytes(b'\x8d\x00')
 
 
