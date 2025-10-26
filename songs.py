@@ -51,21 +51,20 @@ class SongManager():
 
     # Cats on Mars Attempt
     def cats_on_mars(self): #                    E       G       D110    B107    G       E
+        #serial_util.send_as_bytes(b'\x8c\x00\x01\x64\x10')
+        #serial_util.send_as_bytes(b'\x8d\x00')
 
-        serial_util.send_as_bytes(b'\x8c\x00\x01\x64\x10')
+        serial_util.send_as_bytes(b'\x8C\x00\x03\x4c\x10\x4f\x10\x56\x10\x47\x10\x43\x10\x4c\x10')
         serial_util.send_as_bytes(b'\x8d\x00')
-
-        serial_util.send_as_bytes(b'\x8C\x00\x06\x34\x06\x2b\x06\x32\x06\x2f\x06\x2b\x06\x34\x06')
-        serial_util.send_as_bytes(b'\x8d\x01')
 
     # 2
     def mario_death(self):
-        serial_util.send_as_bytes(b'\x8c\x00\x06\x84\x20\x84\x20\x84\x20\x24\20\x84\x20\x2b\x20')
+        serial_util.send_as_bytes(b'\x8c\x00\x06\x4c\x10\x43\x10\x4a\x10\x47\x10\x43\x10\x4c\x10')
         #serial_util.send_as_bytes(b'\x8c\x00\x03\x3c\x3c\x84\x40\x3c\x40')
         serial_util.send_as_bytes(b'\x8d\x00')
 
     # 3
     def tank(self):
-        serial_util.send_as_bytes(b'\x8c\x00\x03\x4c\x08\x4c\x08\x4c\x08')
+        serial_util.send_as_bytes(b'\x8c\x00\x03\x4c\x08\x62\x08\x4c\x08')
         serial_util.send_as_bytes(b'\x8d\x00')
         print("Playing tank!")
