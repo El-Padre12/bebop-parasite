@@ -25,7 +25,7 @@ class SongManager():
         elif (self.currentSong == 1):
             self.cats_on_mars()
         elif (self.currentSong == 2):
-            self.mario_death()
+            self.mario()
         elif (self.currentSong == 3):
             self.tank()
 
@@ -53,27 +53,25 @@ class SongManager():
     def cats_on_mars(self): #                    E       G       D110    B107    G       E
         #serial_util.send_as_bytes(b'\x8c\x00\x01\x64\x10')
         #serial_util.send_as_bytes(b'\x8d\x00')   E       G       D       B       G       E       E 
-        serial_util.send_as_bytes(b'\x8C\x00\x06\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c
-    \x10\x4f\x10\x53\x1A\x4f\x10\x3e\x10\x3b\x1A')
+        serial_util.send_as_bytes(b'\x8C\x00\x0C\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A')
     #     G        B      G       D        B
         serial_util.send_as_bytes(b'\x8d\x00')
 
     # 2
     def mario(self):
         # 1st section
-        serial_util.send_as_bytes
-        (b'\x8c\x00\x06\x4c\x0a\x4c\x0a\x4c\x0a\x48\x0a\x4c\x0a\x43\x0a\x43\x0a\x48\x0a\x43\x0a\x4c\x0a\x45\x0a\x47\x0a\x47\x0a\x1e\x0a\x45\x0a')
+        serial_util.send_as_bytes(b'\x8c\x00\x0E\x4c\x0a\x4c\x0a\x4c\x0a\x48\x0a\x4c\x0a\x43\x0a\x43\x0a\x48\x0a\x43\x0a\x4c\x0a\x45\x0a\x47\x0a\x47\x0a\x1e\x0a\x45\x0a')
         
         # 2nd section
-        serial_util.send_as_bytes(b'\x8c\x01\x06\x43\x0a\x4c\x0a\x43\x0a\x45\x0a\x4d\x0a\x43\x0a\x4c\x0a\x48\x0a\x4a\x0a\x47\x0a')
+        #serial_util.send_as_bytes(b'\x8c\x01\x06\x43\x0a\x4c\x0a\x43\x0a\x45\x0a\x4d\x0a\x43\x0a\x4c\x0a\x48\x0a\x4a\x0a\x47\x0a')
 
         # first call
         serial_util.send_as_bytes(b'\x8d\x00')
 
-        time.sleep(4.48)
+        #time.sleep(4.48)
 
         # second call
-        serial_util.send_as_bytes(b'\x8d\x01')
+        #serial_util.send_as_bytes(b'\x8d\x01')
 
     # 3
     def tank(self):
