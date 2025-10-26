@@ -38,6 +38,8 @@ for char in sys.argv[3]:
             result = 11 + octave * 12
         case 'Y': #F#
             result = 12 + octave * 12
+        case 'R': #F#
+            result = 100
     result = hex(int(result) + 30)
     bstr += '\\x' + result[2:]
     if int(noteDuration) < 16 :
