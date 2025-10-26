@@ -59,9 +59,9 @@ class SongManager():
 
     # 2
     def mario_death(self):
-        serial_util.send_as_bytes(b'\x4c\x0a\x4c\x0a\x4c\x0a\x48\x0a\x43\x0a\x4c\x0a')
-        #serial_util.send_as_bytes(b'\x8c\x00\x03\x3c\x3c\x84\x40\x3c\x40')
+        serial_util.send_as_bytes(b'\x8c\x00\x06\x4c\x0a\x4c\x0a\x4c\x0a\x48\x0a\x43\x0a\x4c\x0a')
         serial_util.send_as_bytes(b'\x8d\x00')
+        #serial_util.send_as_bytes(b'\x8c\x00\x03\x3c\x3c\x84\x40\x3c\x40')
 
     # 3
     def tank(self):
