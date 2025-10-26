@@ -55,7 +55,6 @@ class SongManager():
         serial_util.send_as_bytes(b'\x8c\x02\x0e\x4c\x10\x4f\x10\x56\x1A\x53\x10\x4f\x10\x4c\x1A\x4c\x10\x4f\x10\x53\x1A\x4f\x10\x4a\x10\x47\x1A\x47\x10\x4a\x10')
         serial_util.send_as_bytes(b'\x8c\x03\x06\x4d\x1A\x4a\x10\x47\x10\x43\x1A\x4a\x1A\x43\x2A')
 
-        # Play song sec 1
         serial_util.send_as_bytes(b'\x8d\x00')
         time.sleep(4.6)
 
@@ -66,6 +65,17 @@ class SongManager():
         time.sleep(4.14)
 
         serial_util.send_as_bytes(b'\x8d\x03')
+
+    # 2
+    def mario(self):
+        # 1st song
+        serial_util.send_as_bytes(b'\x8c\x00\x02\x77\x18\x7c\x18')
+
+        # call 1st song
+        serial_util.send_as_bytes(b'\x8d\x00')
+
+        print("Playing Mario Coin Sound!")
+
 
     # 3
     def tank(self):
