@@ -66,6 +66,6 @@ class SongManager():
 
     # 3
     def tank(self):
-        serial_util.send_as_bytes(b'\x8c\x00\x08\x70\x08\x67\x08\x70\x08\x6e\x08\x67\x08\x6e\x08\x67\x08\x67\x08\x71\x08')
+        serial_util.send_as_bytes(b'\x8c\x00\x03\x4c\x08\x4c\x08\x4c\x08')
         serial_util.send_as_bytes(b'\x8d\x00')
         print("Playing tank!")

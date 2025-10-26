@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 import sys
 
-print("Total arguments:", len(sys.argv))
-print("Script name:", sys.argv[0])
-print("Arguments:", sys.argv[1:])
-
 octave = int(sys.argv[1])
 
 if ( octave < 0 ) or ( octave > 8) :
