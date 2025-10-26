@@ -3,7 +3,7 @@ import time
 
 class SongManager():
 
-    songAmount = 6
+    songAmount = 4
     currentSong = 0
 
     # TODO
@@ -85,14 +85,18 @@ class SongManager():
         # serial_util.send_as_bytes(b'\x8d\x01')
 
     # 4
-    def mary_had_a_little_lamb(self):
-        #1st song
-        serial_util.send_as_bytes(b'\x8c\x00\x0d\x4c\x18\x4a\x18\x48\x18\x4a\x18\x4c\x18\x4c\x18\x4c\x18\x4a\x18\x4a\x18\x4a\x18\x4c\x18\x43\x18\x43\x18')
+#   def mary_had_a_little_lamb(self):
+#       #1st song
+#       serial_util.send_as_bytes(b'\x8c\x00\x0d\x4c\x18\x4a\x18\x48\x18\x4a\x18\x4c\x18\x4c\x18\x4c\x18\x4a\x18\x4a\x18\x4a\x18\x4c\x18\x43\x18\x43\x18')
 
-        #call to 1st song
-        serial_util.send_as_bytes(b'\x8d\x00')
+#       call to 1st song
+#       serial_util.send_as_bytes(b'\x8d\x00')
 
     # 5
-    def portal_still_alive(self):
-        serial_util.send_as_bytes(b'\x8c\x00\x0e\x43\x10\x4e\x10\x4c\x10\x4c\x10\x4e\x10\x45\x10\x43\x10\x4e\x10\x4c\x10\x4c\x10\x4c\x10\x4e\x10\x4a\x10\x4c\x10')
-        serial_util.send_as_bytes(b'\x8d\x00')
+#    def portal_still_alive(self):
+#       serial_util.send_as_bytes(b'\x8c\x00\x05\x43\x0c\x4e\x0c\x4c\x0c\x4c\x0c\x4e\x0c')
+#       serial_util.send_as_bytes(b'\x8c\x01\x09\x45\x0c\x43\x0c\x4e\x0c\x4c\x0c\x4c\x0c\x4c\x0e\x4e\x0c\x4a\x0c\x4c\x0c')
+#       serial_util.send_as_bytes(b'\x8d\x00')
+#       time.sleep(3)
+#       serial_util.send_as_bytes(b'\x8d\x01')
+
