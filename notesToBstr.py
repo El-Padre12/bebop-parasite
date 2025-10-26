@@ -13,7 +13,9 @@ if ( octave < 0 ) or ( octave > 8) :
 
 bstr = ''
 
-for char in sys.argv[2]:
+noteDuration = sys.argv[2] 
+
+for char in sys.argv[3]:
     result = 0;
     match char:
         case 'G':
@@ -42,4 +44,8 @@ for char in sys.argv[2]:
             result = 12 + octave * 12
     result = hex(int(result) + 30)
     bstr += '\\x' + result[2:]
+    if int(noteDuration) < 16 :
+        bstr += '\\x0' + hex(int(noteDuration))[2:]
+    else:
+        bstr += '\\x' + hex(int(noteDuration))[2:]
 print(bstr)
