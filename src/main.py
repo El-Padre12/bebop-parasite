@@ -8,12 +8,12 @@ from pyPS4Controller.controller import Controller
 class MyController(Controller):
 
     # Brushes
-    #   def on_R3_right(self, value):
-    #        serial_util.send_as_bytes(b'\x8a\x01')
+    def on_R3_right(self, value):
+         serial_util.send_as_bytes(b'\x8a\x01')
 
     # Motor
-    #   def on_R3_down(self, value):
-    #        serial_util.send_as_bytes(b'\x8a\x02')
+    def on_R3_down(self, value):
+         serial_util.send_as_bytes(b'\x8a\x02')
 
     playlist = songs.SongManager()
 
